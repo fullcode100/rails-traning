@@ -5,3 +5,40 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Librarian.create(
+  email: 'admin@admin.com',
+  password: '123456'
+)
+
+Librarian.create(
+  email: 'admin2@admin.com',
+  password: '123456'
+)
+
+10.times do 
+  Category.create(
+    name: Faker::Food.dish
+  )
+end
+
+10.times do 
+  Author.create(
+    name: Faker::Name.name
+  )
+end
+
+10.times do 
+  Client.create(
+    name: Faker::Name.name
+  )
+end
+
+10.times do
+  Book.create(
+    name: Faker::Restaurant.name,
+    stock: 10,
+    author_id: rand(1..10),
+    category_id: rand(1..10)
+  )
+end
