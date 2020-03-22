@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :librarians
   resources :clients
   resources :books
   resources :categories
