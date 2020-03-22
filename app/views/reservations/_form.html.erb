@@ -1,0 +1,32 @@
+<%= form_with(model: reservation, local: true) do |form| %>
+  <% if reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+      <ul>
+      <% reservation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :book %>
+    <%= collection_select(:reservation, :book_id, Book.all, :id, :name, {prompt: "Selecione um livro"}, {class: "form-control"})%>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_id %>
+    <%= collection_select(:reservation, :client_id, Client.all, :id, :name, {prompt: "Selecione um cliente"}, {class: "form-control"})%>
+  </div>
+
+  <div class="field">
+    <%= form.label :librarian %>
+    <%= collection_select(:reservation, :librarian_id, Librarian.all, :id, :email, {prompt: "Selecione um bibliotecário"}, {class: "form-control"})%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

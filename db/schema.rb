@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_22_172456) do
+ActiveRecord::Schema.define(version: 2020_03_22_175350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,20 @@ ActiveRecord::Schema.define(version: 2020_03_22_172456) do
     t.index ["reset_password_token"], name: "index_librarians_on_reset_password_token", unique: true
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "book_id"
+    t.bigint "client_id"
+    t.bigint "librarian_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_reservations_on_book_id"
+    t.index ["client_id"], name: "index_reservations_on_client_id"
+    t.index ["librarian_id"], name: "index_reservations_on_librarian_id"
+  end
+
   add_foreign_key "books", "authors"
   add_foreign_key "books", "categories"
+  add_foreign_key "reservations", "books"
+  add_foreign_key "reservations", "clients"
+  add_foreign_key "reservations", "librarians"
 end
