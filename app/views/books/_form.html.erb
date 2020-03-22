@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= form.label :author_id %>
-    <%= form.text_field :author_id %>
+    <%= collection_select(:book, :author_id, Author.all, :id, :name, prompt: "Selecione um autor")%>
   </div>
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= form.text_field :category_id %>
+    <%= collection_select(:book, :category_id, Category.all, :id, :name, prompt: "Selecione uma categoria")%>
   </div>
 
   <div class="actions">
