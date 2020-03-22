@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'jquery-rails'
+gem "cocoon"
 gem 'adminlte2-rails'
 
 # Reduces boot times through caching; required in config/boot.rb

@@ -16,6 +16,15 @@
     <%= form.text_field :name %>
   </div>
 
+  <div id='reservations'>
+    <%= form.fields_for :reservations do |reservation| %>
+      <%= render 'reservation_fields', :f => reservation %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add reservation', form, :reservations %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

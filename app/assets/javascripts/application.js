@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require cocoon
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require app
 //= require adminlte.min
 //= require_tree .

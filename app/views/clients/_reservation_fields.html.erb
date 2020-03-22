@@ -1,0 +1,15 @@
+<div class='nested-fields'>
+
+  <div class="field">
+    <%= f.label :book %>
+    <%= collection_select(:reservation, :book_id, Book.all, :id, :name, {prompt: "Selecione um livro"}, {class: "form-control"})%>
+  </div>
+
+  <div class="field">
+    <%= f.label :client_id %>
+    <%= collection_select(:reservation, :client_id, Client.all, :id, :name, {prompt: "Selecione um cliente"}, {class: "form-control"})%>
+  </div>
+
+  <%= hidden_field(:reservation, :librarian_id, :value => current_librarian.id) %>
+
+</div>
