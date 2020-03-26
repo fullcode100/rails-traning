@@ -2,17 +2,17 @@
 
 <p>
   <strong>Book:</strong>
-  <%= @reservation.book %>
+  <%= @reservation.book.name %>
 </p>
 
 <p>
   <strong>Client:</strong>
-  <%= @reservation.client %>
+  <%= @reservation.client.name %>
 </p>
 
 <p>
   <strong>Librarian:</strong>
-  <%= @reservation.librarian %>
+  <%= @reservation.librarian.email %>
 </p>
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
