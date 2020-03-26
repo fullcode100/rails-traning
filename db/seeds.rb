@@ -22,7 +22,7 @@ Librarian.create(
   )
 end
 
-10.times do 
+25.times do 
   Author.create(
     name: Faker::Name.name
   )
@@ -38,7 +38,7 @@ end
   Book.create(
     name: Faker::Restaurant.name,
     stock: 10,
-    author_id: rand(1..10),
+    author_id: rand(1..25),
     category_id: rand(1..10)
   )
 end
