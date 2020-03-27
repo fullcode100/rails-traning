@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @author.name %>
-</p>
-
+<section class="invoice">
+  <div class="row invoice-info">
+    <!-- /.col -->
+    <div class="col-sm-4 invoice-col">
+      <b>Name:</b> <%= @author.name %><br>
+    </div>
+    <!-- /.col -->
+  </div>
+</section>
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>

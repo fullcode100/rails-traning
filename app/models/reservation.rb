@@ -4,10 +4,17 @@ class Reservation < ApplicationRecord
   belongs_to :librarian
 
   after_create :diminuir_estoque_livro
+  after_destroy :aumentar_estoque_livro
 
   def diminuir_estoque_livro
     livro = book
     livro.stock -= 1
+    livro.save!
+  end
+
+  def aumentar_estoque_livro
+    livro = book
+    livro.stock += 1
     livro.save!
   end
 end

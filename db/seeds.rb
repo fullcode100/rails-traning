@@ -37,7 +37,7 @@ end
 10.times do
   Book.create(
     name: Faker::Restaurant.name,
-    stock: 10,
+    stock: rand(1..5),
     author_id: rand(1..25),
     category_id: rand(1..10)
   )
